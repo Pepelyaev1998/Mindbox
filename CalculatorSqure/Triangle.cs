@@ -13,7 +13,7 @@ namespace CalculatorSqure
         public Triangle(string FigureName, double ab, double bc, double ca)
         {
             this.FigureName = FigureName;
-            if (IsCorrectValue(ab, bc, ca)) throw new ArgumentException("Inorrect values");
+            if (IsNotCorrectValue(ab, bc, ca)) throw new ArgumentException("Inorrect values");
             else
             {
                 this.ab = ab;
@@ -41,7 +41,7 @@ namespace CalculatorSqure
             return isRectangular;
         }
 
-        public bool IsCorrectValue(double ab, double bc, double ca)
+        public bool IsNotCorrectValue(double ab, double bc, double ca)
         {
             return ab < 0 || bc < 0 || ca < 0 || ab > (bc + ca) || bc > (ab + ca) || ca > (ab + bc) ?
                  true : false;
